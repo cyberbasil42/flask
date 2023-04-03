@@ -42,7 +42,7 @@ def getUser():
             res.append({"Name:": i[0], "Number:": i[1]})
         return res
     except KeyError as k:
-        return {"Error": f"{k} key is not Found"}
+    return {"Status": f"Error", "Error": f"{k} key is not Found"}
 
 
 @app.route("/add", methods=["POST"])
@@ -62,7 +62,7 @@ def addUser():
         conn.commit()
         return {"Status": f"Success"}
     except KeyError as k:
-        return {"Error": f"{k} key is not Found"}
+            return {"Status": f"Error", "Error": f"{k} key is not Found"}
     except mysql.errors.IntegrityError as err:
         if err.errno == 1062:
             return {
@@ -84,7 +84,7 @@ def truncate():
         conn.commit()
         return {"Status": f"Success"}
     except KeyError as k:
-        return {"Error": f"{k} key is not Found"}
+            return {"Status": f"Error", "Error": f"{k} key is not Found"}
     except mysql.errors.IntegrityError as err:
         if err.errno == 1062:
             return {
