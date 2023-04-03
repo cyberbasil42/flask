@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 conn = mysql.connect(
     host="sql12.freesqldatabase.com",
-    username="sql12603676",
-    database="sql12603676",
-    password="vkqMvFuYGG",
+    username="sql12610742",
+    database="sql12610742",
+    password="PP7szeFBIv",
 )
 
 # conn = mysql.connect(
@@ -18,7 +18,7 @@ conn = mysql.connect(
 # )
 
 db = conn.cursor()
-tn = "sampletable"
+tn = "sample"
 
 
 @app.route('/', methods=['post', 'get'])
